@@ -34,11 +34,13 @@ func main() {
 	db.Start()
 
 	var (
+		// number of Pancakeswap Squad NFT we will crawl
 		numPancakeSquad = 10000
-		numWorkers      = 100
-		client          = &http.Client{Timeout: 5 * time.Second}
-		jobs            = make(chan int, numPancakeSquad)
-		results         = make(chan msg, numPancakeSquad)
+		// number of workers - adjust to fit your CPU
+		numWorkers = 100
+		client     = &http.Client{Timeout: 5 * time.Second}
+		jobs       = make(chan int, numPancakeSquad)
+		results    = make(chan msg, numPancakeSquad)
 	)
 
 	for w := 0; w < numWorkers; w++ {
