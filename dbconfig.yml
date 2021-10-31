@@ -1,0 +1,4 @@
+local:
+  dialect: postgres
+  datasource: user=example password=sEcrEt host=127.0.0.1 port=15433 dbname=crawlexample sslmode=disable
+  dir: db/migrations
